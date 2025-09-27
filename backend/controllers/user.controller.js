@@ -15,9 +15,9 @@ export const signup = async (req,res) => {
 
     const userSchema = z.object({
         firstName: z.string().min(3, {message:"firstName must be atLeast 3 char long"}),
-        lastName: z.string().min(3, {message:"lastName must be tLeast 3 char long"}),
+        lastName: z.string().min(3, {message:"lastName must be atLeast 3 char long"}),
         email: z.string().email(),
-        password: z.string().min(5, {message:"password must be tLeast 5 char long"})
+        password: z.string().min(5, {message:"password must be atLeast 5 char long"})
     });
     const validateData = userSchema.safeParse(req.body);
    if(!validateData.success){
@@ -73,7 +73,7 @@ export const login = async (req,res) => {
         res.cookie("jwt",token, cookieOptions);
         res.status(201).json({message: "login successful", user, token});
     } catch (error) {
-        res.status(500).json({errors: "error ion login"});
+        res.status(500).json({errors: "error in login"});
         console.log("error in login", error);
     }
 };
