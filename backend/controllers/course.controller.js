@@ -131,6 +131,8 @@ export const courseDetail = async (req,res) => {
 }
 
 
+
+
 //buy courses
 export const buyCourses = async (req,res) => {
     const {courseId} = req.params;
