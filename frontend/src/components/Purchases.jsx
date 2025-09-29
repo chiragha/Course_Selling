@@ -6,6 +6,7 @@ import { IoMdSettings } from "react-icons/io";
 import { IoLogIn, IoLogOut } from "react-icons/io5";
 import { RiHome2Fill } from "react-icons/ri";
 import { HiMenu, HiX } from "react-icons/hi"; 
+import { useNavigate } from "react-router-dom";
 
 
 function Purchases() {
@@ -13,6 +14,8 @@ function Purchases() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [errorMessage, setErrorMessage] = useState(true);
    const [isSidebarOpen, setIsSidebarOpen] = useState(false); // Sidebar open state
+
+   const navigate = useNavigate();
 
 
   console.log("Purchase", purchase);
@@ -23,8 +26,10 @@ function Purchases() {
         withCredentials: true,
       });
       console.log("Login successful: ", res.data);
-      alert(res.data.message);
+      alert(res.data.message || "Logout successful");
+      localStorage.removeItem("user");
       setLoggedIn(false);
+      navigate("/login"); 
     } catch (error) {
       if (error.response) {
         console.error("Error response:", error.response.data);

@@ -4,6 +4,7 @@ import axios from "axios";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
   const [courses, setCourses] = useState([]);
@@ -41,13 +42,12 @@ function Home() {
   };
 
   useEffect(() => {
-    const token = localStorage.getItem("user");
-    if (token) {
-      setLoggedIn(true);
-    } else {
-      setLoggedIn(false);
-    }
-  }, []);
+  const token = localStorage.getItem("user");
+  if (!token) {
+    navigate("/login");
+    return;
+  }
+}, []);
 
   useEffect(() => {
     const fetchCourses = async () => {

@@ -2,11 +2,14 @@ import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate} from "react-router-dom";
 
-function Login() {
+function AdminSignup() {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
+  // for navigation 
   const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
@@ -14,8 +17,10 @@ function Login() {
 
   try {
     const res = await axios.post(
-      "http://localhost:4001/api/v1/user/Login",
+      "http://localhost:4001/api/v1/admin/signup",
       {
+        firstName,
+        lastName,
         email,
         password,
       },
@@ -27,10 +32,9 @@ function Login() {
       }
     );
 
-    console.log("Login successful: ", res.data);
-    if (res.data?.message) alert(res.data.message);
-    localStorage.setItem("user", JSON.stringify(res.data.token));
-    navigate("/")
+    console.log("Signup successful: ", res.data);
+    alert(res.data.message);
+    navigate("/admin/login")
  } catch (error) {
   if (error.response) {
     console.error("Error response:", error.response.data);
@@ -42,7 +46,7 @@ function Login() {
     } else if (typeof errData === "string") {
       setErrorMessage(errData); // handle single string
     } else {
-      setErrorMessage("Login failed");
+      setErrorMessage("Signup failed");
     }
   } else {
     console.error("Error:", error.message);
@@ -66,10 +70,10 @@ function Login() {
           </div>
           <div className="flex items-center space-x-4">
             <Link
-              to={"/signup"}
+              to={"/admin/login"}
               className="bg-transparent border border-gray-500 p-1 text-sm md:text-md md:py-2 md:px-4 rounded-md"
             >
-              Signup
+              Login
             </Link>
             <Link
               to={"/courses"}
@@ -80,14 +84,42 @@ function Login() {
           </div>
         </header>
 
-        {/* Login Form */}
+        {/* Signup Form */}
         <div className="bg-gradient-to-b from-cyan-400 to-cyan-100 p-8 rounded-lg shadow-lg w-[500px] m-8 md:m-0 mt-20">
-                      <h3 className='text-black font-bold text-2xl'>Course<span className='text-amber-500'>HUB</span></h3>
-          <p className="text-center text-black mb-6">
-            Just Login To Join Us!
+                      {/* <h3 className='text-black font-bold text-2xl'>Course<span className='text-amber-500'>HUB</span></h3> */}
+          <p className="text-center text-black mb-6 text-3xl">
+            Admin Signup!
           </p>
 
           <form onSubmit={handleSubmit}>
+            <div className="mb-4">
+              <label htmlFor="firstname" className=" black mb-2">
+                Firstname
+              </label>
+              <input
+                type="text"
+                id="firstname"
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+                className="w-full p-3 rounded-md bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Type your firstname"
+              />
+            </div>
+            <div className="mb-4">
+              <label htmlFor="lastname" className=" text-black mb-2">
+                Lastname
+              </label>
+              <input
+                type="text"
+                id="lastname"
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
+                className="w-full p-3 rounded-md bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Type your lastname"
+                required
+              />
+            </div>
+
             <div className="mb-4">
               <label htmlFor="email" className=" text-black mb-2">
                 Email
@@ -134,7 +166,7 @@ function Login() {
               type="submit"
               className="w-full bg-orange-500 hover:bg-blue-600 text-white py-3 px-6 rounded-md transition"
             >
-              Login
+              Signup
             </button>
           </form>
         </div>
@@ -143,4 +175,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default AdminSignup;

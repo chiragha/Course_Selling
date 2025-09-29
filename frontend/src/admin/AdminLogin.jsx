@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate} from "react-router-dom";
 
-function Login() {
+function AdminLogin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -14,7 +14,7 @@ function Login() {
 
   try {
     const res = await axios.post(
-      "http://localhost:4001/api/v1/user/Login",
+      "http://localhost:4001/api/v1/admin/login",
       {
         email,
         password,
@@ -27,10 +27,11 @@ function Login() {
       }
     );
 
-    console.log("Login successful: ", res.data);
-    if (res.data?.message) alert(res.data.message);
-    localStorage.setItem("user", JSON.stringify(res.data.token));
-    navigate("/")
+    // console.log("Admin Login successful: ", res.data);
+    alert(`Admin Login successful: ${res.data.message}`);
+localStorage.setItem("admin", JSON.stringify(res.data.token));
+navigate("/admin/dashboard");
+
  } catch (error) {
   if (error.response) {
     console.error("Error response:", error.response.data);
@@ -66,7 +67,7 @@ function Login() {
           </div>
           <div className="flex items-center space-x-4">
             <Link
-              to={"/signup"}
+              to={"/admin/signup"}
               className="bg-transparent border border-gray-500 p-1 text-sm md:text-md md:py-2 md:px-4 rounded-md"
             >
               Signup
@@ -82,9 +83,9 @@ function Login() {
 
         {/* Login Form */}
         <div className="bg-gradient-to-b from-cyan-400 to-cyan-100 p-8 rounded-lg shadow-lg w-[500px] m-8 md:m-0 mt-20">
-                      <h3 className='text-black font-bold text-2xl'>Course<span className='text-amber-500'>HUB</span></h3>
-          <p className="text-center text-black mb-6">
-            Just Login To Join Us!
+                      {/* <h3 className='text-black font-bold text-2xl'>Course<span className='text-amber-500'>HUB</span></h3> */}
+           <p className="text-center text-black mb-6 text-3xl">
+            Admin Login!
           </p>
 
           <form onSubmit={handleSubmit}>
@@ -143,4 +144,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default AdminLogin;
