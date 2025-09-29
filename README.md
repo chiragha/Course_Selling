@@ -61,9 +61,14 @@ npm start
 
 ---
 
-## 📸 Screenshots (Optional)
+## 📸 Screenshots
 
 *Add screenshots of homepage, login, courses, and dashboard here.*
+<img width="1302" height="608" alt="home" src="https://github.com/user-attachments/assets/995e1306-f7a2-42a3-a647-7b36e0b38353" />
+<img width="1356" height="630" alt="signup" src="https://github.com/user-attachments/assets/aa503136-ca98-4f56-9200-a62504ed4d5a" />
+<img width="1360" height="624" alt="login" src="https://github.com/user-attachments/assets/5ec8951d-f9c6-42f5-9cc6-e5ccc93d393c" />
+<img width="1360" height="619" alt="purchased course" src="https://github.com/user-attachments/assets/6243dfbf-7138-4f06-8ae7-7790d57ab8ce" />
+
 
 ---
 
