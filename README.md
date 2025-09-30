@@ -96,7 +96,8 @@ npm start
 <img width="1068" height="482" alt="admin dashboard" src="https://github.com/user-attachments/assets/d0204e7c-addf-4e82-861c-75a17b656c40" />
 
 ### Admin Create Course Page
-<img width="1068" height="482" alt="admin dashboard" src="https://github.com/user-attachments/assets/62513afa-ada7-4b7c-8279-eae3bd2a90c3" />
+<img width="1168" height="635" alt="admin create course" src="https://github.com/user-attachments/assets/9a883c9d-f6a8-49ca-9aa5-c1128c034739" />
+
 
 ### Admin All Course Page
 <img width="1298" height="411" alt="admin courses all" src="https://github.com/user-attachments/assets/20872112-4eb6-4de3-bf1f-bd23a9abd995" />
