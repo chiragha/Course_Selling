@@ -33,7 +33,7 @@ A full-stack Course Selling Website where users can browse, purchase, and manage
 **Backend:** Node.js, Express.js  
 **Database:** MongoDB  
 **Authentication:** JWT (JSON Web Token)  
-**Payment Gateway:** Razorpay (Test Mode)  
+ 
 
 ---
 
@@ -68,10 +68,12 @@ npm start
 
 --- ##
 
-🌟 Future Improvements *
+🌟 Future Improvements
+*
 ✅ payment gateway integration * 
 ✅ Instructor dashboard (add/edit courses) * 
 ✅ Enhanced UI with animations 
+
 
 --- ## 
 🤝 Contributing Contributions, issues, and feature requests are welcome! Feel free to fork this repo and submit a pull request.
