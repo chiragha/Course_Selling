@@ -66,13 +66,15 @@ npm start
 <img width="1360" height="624" alt="login" src="https://github.com/user-attachments/assets/5ec8951d-f9c6-42f5-9cc6-e5ccc93d393c" /> 
 <img width="1360" height="619" alt="purchased course" src="https://github.com/user-attachments/assets/6243dfbf-7138-4f06-8ae7-7790d57ab8ce" /> 
 
---- ##🌟 Future Improvements
+--- 
+##🌟 Future Improvements
 *
 ✅ payment gateway integration * 
 ✅ Instructor dashboard (add/edit courses) * 
 ✅ Enhanced UI with animations 
 
 
---- ## 🤝 Contributing Contributions, issues, and feature requests are welcome! Feel free to fork this repo and submit a pull request.
+--- 
+## 🤝 Contributing Contributions, issues, and feature requests are welcome! Feel free to fork this repo and submit a pull request.
 ---
 
