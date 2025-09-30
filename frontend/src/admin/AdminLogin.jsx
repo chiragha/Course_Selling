@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import logo from "../../public/logo.webp";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import toast from "react-hot-toast";
@@ -43,15 +42,14 @@ function AdminLogin() {
   };
 
   return (
-    <div className="bg-gradient-to-r from-black to-blue-950 ">
+    <div className="bg-gradient-to-b from-cyan-500 to-cyan-200
+ text-shadow-indigo-500  min-h-screen">
       <div className="h-screen container mx-auto flex  items-center justify-center text-white">
         {/* Header */}
         <header className="absolute top-0 left-0 w-full flex justify-between items-center p-5  ">
-          <div className="flex items-center space-x-2">
-            <img src="/logo.png" alt="Logo" className="w-10 h-10 rounded-full" />
-            <Link to={"/"} className="text-xl font-bold text-orange-500">
-              CourseHaven
-            </Link>
+           <div className="flex items-center space-x-2">
+           <img src='/logo.png' alt='img' className='h-10 w-10'/>
+            <h3 className='text-emerald-950 font-bold text-2xl'>Course<span className='text-amber-500'>HUB</span></h3>
           </div>
           <div className="flex items-center space-x-4">
             <Link
@@ -70,17 +68,15 @@ function AdminLogin() {
         </header>
 
         {/* AdminLogin Form */}
-        <div className="bg-gray-900 p-8 rounded-lg shadow-lg w-[500px] mt-20">
-          <h2 className="text-2xl font-bold mb-4 text-center">
-            Welcome to <span className="text-orange-500">CourseHaven</span>
-          </h2>
-          <p className="text-center text-gray-400 mb-6">
-            Log in to access admin dashboard!
+         <div className="bg-gradient-to-b from-cyan-400 to-cyan-100 p-8 rounded-lg shadow-lg w-[500px] m-8 md:m-0 mt-20">
+                      <h3 className='text-black font-bold text-2xl'>Course<span className='text-amber-500'>HUB</span></h3>
+          <p className="text-center text-black mb-6">
+            Just Login To Join Us!
           </p>
 
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
-              <label htmlFor="email" className=" text-gray-400 mb-2">
+             <label htmlFor="email" className=" text-black mb-2">
                 Email
               </label>
               <input
@@ -94,7 +90,7 @@ function AdminLogin() {
               />
             </div>
             <div className="mb-4">
-              <label htmlFor="password" className=" text-gray-400 mb-2">
+              <label htmlFor="password" className=" text-black mb-2">
                 Password
               </label>
               <div className="relative">
