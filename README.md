@@ -61,10 +61,47 @@ npm start
 ```
 
 ## 📸 Screenshots 
+
+### Home Page
 <img width="1302" height="608" alt="home" src="https://github.com/user-attachments/assets/995e1306-f7a2-42a3-a647-7b36e0b38353" /> 
+
+### Sign-up User Page
 <img width="1356" height="630" alt="signup" src="https://github.com/user-attachments/assets/aa503136-ca98-4f56-9200-a62504ed4d5a" />
+
+### login User Page
 <img width="1360" height="624" alt="login" src="https://github.com/user-attachments/assets/5ec8951d-f9c6-42f5-9cc6-e5ccc93d393c" /> 
+
+### All Courses Page
 <img width="1360" height="619" alt="purchased course" src="https://github.com/user-attachments/assets/6243dfbf-7138-4f06-8ae7-7790d57ab8ce" /> 
+
+
+### User Payment Page
+<img width="649" height="639" alt="payment" src="https://github.com/user-attachments/assets/5a956472-2188-4a98-9e0c-60c6a9dfcc7d" />
+
+
+### User Purchased Courses
+<img width="690" height="490" alt="purchased" src="https://github.com/user-attachments/assets/8ed45974-b889-4b61-bf05-997aadaafaba" />
+
+
+
+## ADMIN Page
+
+### Admin Sign-up Page
+<img width="1344" height="602" alt="admin signup" src="https://github.com/user-attachments/assets/0226dbac-45db-48a0-a653-284c222b6360" />
+
+### Admin Login Page
+<img width="1361" height="541" alt="admin login" src="https://github.com/user-attachments/assets/dfa560b9-17cb-4eea-b530-8c8d756cfc6f" />
+
+### Admin Dashboard Page
+<img width="1068" height="482" alt="admin dashboard" src="https://github.com/user-attachments/assets/d0204e7c-addf-4e82-861c-75a17b656c40" />
+
+### Admin Create Course Page
+<img width="1068" height="482" alt="admin dashboard" src="https://github.com/user-attachments/assets/62513afa-ada7-4b7c-8279-eae3bd2a90c3" />
+
+### Admin All Course Page
+<img width="1298" height="411" alt="admin courses all" src="https://github.com/user-attachments/assets/20872112-4eb6-4de3-bf1f-bd23a9abd995" />
+
+
 
 
 --- 
