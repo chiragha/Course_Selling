@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate} from "react-router-dom";
+import toast from "react-hot-toast";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -28,8 +29,9 @@ function Login() {
     );
 
     console.log("Login successful: ", res.data);
-    if (res.data?.message) alert(res.data.message);
+    if (res.data?.message) toast.success(res.data.message);
     localStorage.setItem("user", JSON.stringify(res.data.token));
+    
     navigate("/")
  } catch (error) {
   if (error.response) {

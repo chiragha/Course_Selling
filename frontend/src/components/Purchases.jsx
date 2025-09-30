@@ -7,6 +7,7 @@ import { IoLogIn, IoLogOut } from "react-icons/io5";
 import { RiHome2Fill } from "react-icons/ri";
 import { HiMenu, HiX } from "react-icons/hi"; 
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 
 function Purchases() {
@@ -26,15 +27,15 @@ function Purchases() {
         withCredentials: true,
       });
       console.log("Login successful: ", res.data);
-      alert(res.data.message || "Logout successful");
+       toast.success(res.data.message);
       localStorage.removeItem("user");
       setLoggedIn(false);
       navigate("/login"); 
     } catch (error) {
       if (error.response) {
-        console.error("Error response:", error.response.data);
-
-        const errData = error.response.data.errors;
+        console.error("Error response:", error.res.data);
+         toast.error(error.res.data.errors || "Error in logging out");
+        const errData = error.res.data.errors;
 
         if (Array.isArray(errData)) {
           setErrorMessage(errData.join(", "));

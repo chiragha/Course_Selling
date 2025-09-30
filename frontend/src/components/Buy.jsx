@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import toast from "react-hot-toast";
 
 function Buy() {
   const [loading, setLoading] = useState(false);
@@ -25,17 +26,17 @@ function Buy() {
           withCredentials: true,
         }
       );
-      alert(response.data.message || "Course Purchased Successfully!");
+      toast.success(response.data.message || "Course Purchased Successfully!");
       setLoading(false);
       navigate("/purchase");
     } catch (error) {
       setLoading(false);
       if (error?.response?.status === 400) {
-        alert("You have already purchased this course");
+        toast.success("You have already purchased this course");
         navigate("/purchase");
       } else {
         console.error("Purchase failed:", error?.response?.data || error.message);
-        alert(error?.response?.data?.message || "Something went wrong");
+        toast.error(error?.response?.data?.message || "Something went wrong");
       }
     }
   };

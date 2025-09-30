@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate} from "react-router-dom";
+import toast from "react-hot-toast";
 
 function AdminSignup() {
   const [firstName, setFirstName] = useState("");
@@ -33,7 +34,7 @@ function AdminSignup() {
     );
 
     console.log("Signup successful: ", res.data);
-    alert(res.data.message);
+     toast.success(res.data.message);
     navigate("/admin/login")
  } catch (error) {
   if (error.response) {

@@ -9,6 +9,7 @@ import { IoLogIn, IoLogOut } from "react-icons/io5";
 import { FiSearch } from "react-icons/fi";
 import { HiMenu, HiX } from "react-icons/hi"; 
 import { Link, useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 function Courses() {
 
@@ -24,13 +25,13 @@ console.log("courses",courses)
           withCredentials: true,
         });
         console.log("Login successful: ", res.data);
-        alert(res.data.message);
+        toast.success(res.data.message);
         setLoggedIn(false);
       } catch (error) {
         if (error.response) {
-          console.error("Error response:", error.response.data);
-  
-          const errData = error.response.data.errors;
+          console.error("Error response:", error.res.data);
+          toast.error(error.res.data.errors || "Error in logging out");
+          const errData = error.res.data.errors;
   
           if (Array.isArray(errData)) {
             setErrorMessage(errData.join(", "));

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { toast } from "react-hot-toast";
+
  
 
 function OurCourses() {
@@ -102,7 +104,7 @@ function OurCourses() {
               <div>
                 {" "}
                 ₹{course.price}{" "}
-                <span className="line-through text-gray-500">₹300</span>
+                <span className="line-through text-gray-500">₹10000</span>
               </div>
               <div className="text-green-600 text-sm mt-2">10 % off</div>
             </div>

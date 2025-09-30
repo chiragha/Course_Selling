@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 
  
@@ -24,16 +25,17 @@ import axios from "axios";
 
     // Remove token from localStorage
     localStorage.removeItem("admin");
-     alert("Logout successful");
+     toast.success("Logout successful");
     navigate("/admin/login");
   } catch (error) {
     console.error("Logout error:", error);
+    toast.error("error in logout")
 
     // Fallback error message
     if (error.response && error.response.data && error.response.data.error) {
-      alert(error.response.data.error);
+      toast.error(error.response.data.error);
     } else {
-      alert("Logout failed. Please try again.");
+      toast.error("Logout failed. Please try again.");
     }
 
     // Remove token anyway to prevent stuck state

@@ -4,6 +4,7 @@ import axios from "axios";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
 function Home() {
@@ -11,20 +12,22 @@ function Home() {
   const [loggedIn, setLoggedIn] = useState(false);
   //  const [errorMessage, setErrorMessage] = useState("");
 
+  const navigate = useNavigate();
+
   const handleLogout = async () => {
     try {
       const res = await axios.get("http://localhost:4001/api/v1/user/logout", {
         withCredentials: true,
       });
       console.log("logout successful: ", res.data);
-      alert(res.data.message);
+       toast.success(res.data.message);
       // Remove user from localStorage
     localStorage.removeItem("user");
       setLoggedIn(false);
     } catch (error) {
       if (error.response) {
         console.error("Error response:", error.response.data);
-
+         toast.error(error.res.data.errors || "Error in logging out");
         const errData = error.response.data.errors;
 
         if (Array.isArray(errData)) {
@@ -113,7 +116,7 @@ function Home() {
         {/* header section  */}
         <header className="flex items-center justify-between p-6">
           <div className="flex items-center space-x-2">
-            <img src="/logo.png" alt="img" className="h-10 w-10" />
+           <img src="/logo.png" alt="img" className="h-10 w-10" />
             <h3 className="text-emerald-950 font-bold text-2xl">
               Course<span className="text-amber-500">HUB</span>
             </h3>
